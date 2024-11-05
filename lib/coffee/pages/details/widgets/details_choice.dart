@@ -10,19 +10,29 @@ class DetailsChoice extends StatefulWidget {
 
 class _DetailsChoiceState extends State<DetailsChoice> {
   int selectedContainerIndex = 0;
+
+  final List<String> choices = [
+    'White Chocolate',
+    'Milk Chocolate',
+    'Dark Chocolate',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: 40,
-        child: ListView(
-          scrollDirection: Axis.horizontal,
-          children: [
-            GestureDetector(
-              onTap: () {
-                setState(() {
-                  selectedContainerIndex = 0;
-                });
-              },
+      height: 40,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: choices.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () {
+              setState(() {
+                selectedContainerIndex = index;
+              });
+            },
+            child: Padding(
+              padding: const EdgeInsets.only(right: 15),
               child: Container(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 20,
@@ -31,98 +41,28 @@ class _DetailsChoiceState extends State<DetailsChoice> {
                 decoration: BoxDecoration(
                   border: Border.all(
                     width: 1,
-                    color: selectedContainerIndex == 0
+                    color: selectedContainerIndex == index
                         ? Colors.white
                         : AppColor.homeButton,
                   ),
                   borderRadius: BorderRadius.circular(22),
-                  color: selectedContainerIndex == 0
+                  color: selectedContainerIndex == index
                       ? AppColor.homeButton
                       : Colors.white,
                 ),
                 child: Text(
-                  'White Chocolate',
+                  choices[index],
                   style: TextStyle(
-                    color: selectedContainerIndex == 0
+                    color: selectedContainerIndex == index
                         ? Colors.white
                         : AppColor.homeButton,
                   ),
                 ),
               ),
             ),
-            const SizedBox(
-              width: 10,
-            ),
-            GestureDetector(
-              onTap: () {
-                setState(() {
-                  selectedContainerIndex = 1;
-                });
-              },
-              child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 10,
-                ),
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 1,
-                    color: selectedContainerIndex == 1
-                        ? Colors.white
-                        : AppColor.homeButton,
-                  ),
-                  borderRadius: BorderRadius.circular(22),
-                  color: selectedContainerIndex == 1
-                      ? AppColor.homeButton
-                      : Colors.white,
-                ),
-                child: Text(
-                  'Milk Chocolate',
-                  style: TextStyle(
-                    color: selectedContainerIndex == 1
-                        ? Colors.white
-                        : AppColor.homeButton,
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            GestureDetector(
-              onTap: () {
-                setState(() {
-                  selectedContainerIndex = 2;
-                });
-              },
-              child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 10,
-                ),
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 1,
-                    color: selectedContainerIndex == 2
-                        ? Colors.white
-                        : AppColor.homeButton,
-                  ),
-                  borderRadius: BorderRadius.circular(22),
-                  color: selectedContainerIndex == 2
-                      ? AppColor.homeButton
-                      : Colors.white,
-                ),
-                child: Text(
-                  'Dark Chocolate',
-                  style: TextStyle(
-                    color: selectedContainerIndex == 2
-                        ? Colors.white
-                        : AppColor.homeButton,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ));
+          );
+        },
+      ),
+    );
   }
 }

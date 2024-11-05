@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigator_pages/coffee/apps/configs/app_color.dart';
+import 'package:navigator_pages/coffee/apps/routers/routers_name.dart';
 
 class DetailsPrice extends StatelessWidget {
   const DetailsPrice({super.key});
@@ -30,7 +31,14 @@ class DetailsPrice extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColor.homeButton,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.popAndPushNamed(context, RoutersName.rootPage);
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Payment successful'),
+              ),
+            );
+          },
           child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Text(

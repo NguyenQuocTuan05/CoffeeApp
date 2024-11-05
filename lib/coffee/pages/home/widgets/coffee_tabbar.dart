@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:navigator_pages/coffee/apps/configs/app_color.dart';
 
 class CoffeeTapbar extends StatefulWidget {
@@ -15,12 +16,36 @@ class _CoffeeTapbarState extends State<CoffeeTapbar> {
       length: 4,
       child: Column(
         children: [
-          const TabBar(
+          TabBar(
+            tabAlignment: TabAlignment.start,
+            isScrollable: true,
+            labelColor: AppColor.homeButton,
+            indicatorColor: AppColor.homeButton,
             tabs: [
-              Text('Espresso'),
-              Text('Espresso'),
-              Text('Espresso'),
-              Text('Espresso'),
+              Text(
+                'Espresso',
+                style: GoogleFonts.happyMonkey(
+                  fontSize: 23,
+                ),
+              ),
+              Text(
+                'Latte',
+                style: GoogleFonts.happyMonkey(
+                  fontSize: 23,
+                ),
+              ),
+              Text(
+                'Cappuchino',
+                style: GoogleFonts.happyMonkey(
+                  fontSize: 23,
+                ),
+              ),
+              Text(
+                'Cafetiea',
+                style: GoogleFonts.happyMonkey(
+                  fontSize: 23,
+                ),
+              ),
             ],
           ),
           const SizedBox(

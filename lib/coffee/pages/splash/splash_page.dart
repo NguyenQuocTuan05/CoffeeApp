@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:navigator_pages/coffee/apps/configs/app_color.dart';
 import 'package:navigator_pages/coffee/apps/routers/routers_name.dart';
+import 'package:navigator_pages/coffee/pages/splash/widgets/splash_button.dart';
+import 'package:navigator_pages/coffee/pages/splash/widgets/splash_title.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
@@ -28,31 +30,11 @@ class SplashPage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const Text(
-                'Get the cup filled of your choice to stay focused and awake. Diffrent type of coffee menu, hot lottee cappucino',
-                style: TextStyle(
-                  color: Color.fromARGB(68, 69, 69, 182),
-                  fontSize: 16.2,
-                ),
-                textAlign: TextAlign.center,
-              ),
+              const SplashTitle(),
               const SizedBox(
                 height: 60,
               ),
-              ElevatedButton(
-                style:
-                    ElevatedButton.styleFrom(backgroundColor: AppColor.primary),
-                onPressed: () {
-                  Navigator.pushReplacementNamed(context, RoutersName.homePage);
-                },
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Text(
-                    'Dive In ->',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ),
+              const SplashButton(),
             ],
           ),
         ),

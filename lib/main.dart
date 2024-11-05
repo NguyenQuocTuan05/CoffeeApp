@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const SplashPage(),
       routes: {
+        RoutersName.rootPage: (_) => const RootPage(),
         RoutersName.splashPage: (_) => const SplashPage(),
         RoutersName.homePage: (_) => const HomePage(),
         RoutersName.cartPage: (_) => const CartPage(),
