@@ -4,6 +4,7 @@ import 'package:navigator_pages/coffee/pages/cart/cart_page.dart';
 import 'package:navigator_pages/coffee/pages/details/details_page.dart';
 import 'package:navigator_pages/coffee/pages/home/home_page.dart';
 import 'package:navigator_pages/coffee/pages/splash/splash_page.dart';
+import 'package:navigator_pages/coffee/pages/theme/theme_pages.dart';
 
 class RootPage extends StatefulWidget {
   const RootPage({super.key});
@@ -16,7 +17,7 @@ class _RootPageState extends State<RootPage> {
   List<Widget> listPage = [
     const HomePage(),
     const CartPage(),
-    const DetailsPage(),
+    const ThemePages(),
   ];
   int indexActivePage = 0;
   @override
